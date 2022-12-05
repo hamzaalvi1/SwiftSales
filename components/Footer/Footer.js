@@ -1,4 +1,4 @@
-import styles from "./footer.module.scss"
+import styles from "./Footer.module.scss"
 import { Container, Row, Col } from "react-bootstrap"
 import Image from "next/image"
 import Link from "next/link"
