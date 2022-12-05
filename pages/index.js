@@ -25,7 +25,7 @@ export default function Home() {
         <meta property="og:description" content="SwiftSales" />
         <meta
           property="og:image"
-          content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeGKQWM15Dnfz8P95BnachQY_W4OVda31jIERLfWxnzCYVLT5t&s"
+          content="https://swift-sales-demo.vercel.app/home/footer/f-logo.png"
         />
         <meta property="og:url" content="" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -208,14 +208,14 @@ export default function Home() {
               <div className={styles["trusted-partners"]}>
                 <Image
                   src={"/home/trustedby/appverticals.png"}
-                  width={144}
-                  height={47}
+                  width={190}
+                  height={60}
                   alt="p-1"
                 />
                 <Image
                   src={"/home/trustedby/digemp.png"}
-                  width={144}
-                  height={47}
+                  width={160}
+                  height={60}
                   alt="p-4"
                 />
               </div>
