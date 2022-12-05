@@ -1,0 +1,21 @@
+@import "../../styles/theme/variables";
+.primary-btn {
+  width: 268px;
+  height: 60px;
+  border-radius: 41px;
+  text-transform: uppercase;
+  background: $secondary-color;
+  color: $white;
+  letter-spacing: 1.44px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+@media (max-width: 575px){
+  .primary-btn {
+    width: 100% !important;
+    height: 50px;
+    font-size: 16px;
+  
+  }
+}

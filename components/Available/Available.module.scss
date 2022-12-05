@@ -1,0 +1,112 @@
+@import "../../styles/theme/variables";
+.available {
+  width: 100%;
+  padding: 60px 0;
+  background: $light-grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 9999;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1015px;
+    height: 661px;
+    background-size: 100%;
+    background: url(../../public/home/available/before-dots.png) no-repeat;
+    z-index: -1;
+  }
+
+  .available-content {
+    h2 {
+      font-size: 28px;
+      font-weight: 700;
+      padding: 0 0 30px;
+    }
+    p {
+      font-size: 20px;
+      line-height: 35px;
+      letter-spacing: 0.4px;
+    }
+
+    a {
+      margin: 20px 10px 0 0;
+      cursor: pointer;
+      img {
+        cursor: pointer;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1250px) {
+  .available {
+    &::before {
+      content: "";
+      width: 100%;
+      background-size: 100%;
+    }
+
+    .available-content {
+      h2 {
+        font-size: 26px;
+        font-weight: 700;
+        padding: 0 0 12px;
+      }
+      p {
+        font-size: 17px;
+        line-height: 33px;
+        letter-spacing: 0.4px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .available {
+    &::before {
+      content: "";
+      width: 100%;
+      background-size: 100%;
+    }
+
+    .available-content {
+      h2 {
+        font-size: 24px;
+        font-weight: 700;
+        padding: 0 0 12px;
+      }
+      p {
+        font-size: 17px;
+        line-height: 33px;
+        letter-spacing: 0.4px;
+      }
+    }
+  }
+}
+@media (max-width: 991px) {
+  .available {
+    padding: 40px 0;
+    .available-content {
+      h2 {
+        font-size: 21px;
+        line-height: 35px;
+      }
+      p {
+        font-size: 14px;
+        line-height: 28px;
+        letter-spacing: 0.4px;
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .available {
+    .available-content {
+      text-align: center;
+    }
+  }
+}

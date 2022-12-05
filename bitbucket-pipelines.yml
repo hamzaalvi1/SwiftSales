@@ -1,0 +1,52 @@
+image: koderlabs/node-build:latest
+
+pipelines:
+  branches:
+    dev:
+      - step:
+          name: Deploy Website to Dev Server
+          deployment: test
+          caches:
+            - node
+          script:
+            - wget -O - https://raw.githubusercontent.com/shahzaib-sheikh/replace-env-vars/master/replace-env-vars.sh | bash -s ./src/config.example.js ./src/assets/js/config.js SS_LANDING
+            - npm rebuild node-sass
+            - npm install
+            - npm run build
+            - ssh deployment-agent@dev.swiftchat.io "mkdir -p /docker/app/landing"
+            - ls -al dist/
+            - rsync -r ./dist ./nginx.conf ./Dockerfile ./docker-compose.yml deployment-agent@dev.swiftchat.io:/docker/app/landing
+            - ssh deployment-agent@dev.swiftchat.io "cd /docker/app/landing/dist && ls -al"
+            - ssh deployment-agent@dev.swiftchat.io "cd /docker/app/landing && docker-compose up -d --build sc.web"
+    beta:
+      - step:
+          name: Deploy Website to Beta Server
+          deployment: beta
+          caches:
+            - node
+          script:
+            - wget -O - https://raw.githubusercontent.com/shahzaib-sheikh/replace-env-vars/master/replace-env-vars.sh | bash -s ./src/config.example.js ./src/assets/js/config.js SS_LANDING
+            - npm rebuild node-sass
+            - npm install
+            - npm run build
+            - ssh deployment-agent@beta.swiftchat.io "mkdir -p /docker/app/landing"
+            - ls -al dist/
+            - rsync -r ./dist ./nginx.conf ./Dockerfile ./docker-compose.yml deployment-agent@beta.swiftchat.io:/docker/app/landing
+            - ssh deployment-agent@beta.swiftchat.io "cd /docker/app/landing/dist && ls -al"
+            - ssh deployment-agent@beta.swiftchat.io "cd /docker/app/landing && docker-compose up -d --build sc.web"
+    master:
+      - step:
+          name: Deploy Website to Production Server
+          deployment: production
+          caches:
+            - node
+          script:
+            - wget -O - https://raw.githubusercontent.com/shahzaib-sheikh/replace-env-vars/master/replace-env-vars.sh | bash -s ./src/config.example.js ./src/assets/js/config.js SS_LANDING
+            - npm rebuild node-sass
+            - npm install
+            - npm run build
+            - ssh deployment-agent@www.swiftchat.io "mkdir -p /docker/app/landing"
+            - ls -al dist/
+            - rsync -r ./dist ./nginx.conf ./Dockerfile ./docker-compose.yml deployment-agent@www.swiftchat.io:/docker/app/landing
+            - ssh deployment-agent@www.swiftchat.io "cd /docker/app/landing/dist && ls -al"
+            - ssh deployment-agent@www.swiftchat.io "cd /docker/app/landing && docker-compose up -d --build sc.web"

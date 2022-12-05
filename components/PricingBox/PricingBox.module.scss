@@ -1,0 +1,134 @@
+@import "../../styles/theme/variables";
+.boxWrapper {
+  width: 370px;
+  min-height: 570px;
+  background: $white;
+  box-shadow: 0px 12px 18px #00000014;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: auto;
+  position: relative;
+
+  &:hover {
+    border-color: #f78f21;
+  }
+
+  h3 {
+    font: normal normal 700 32px/30px $primary-font;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+  }
+
+  p {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+
+    .currency {
+      font: normal normal 200 50px/63px $primary-font;
+      letter-spacing: 0px;
+      color: $secondary-color;
+    }
+
+    .price {
+      font: normal normal 700 93px/99px $primary-font;
+      letter-spacing: 0px;
+      color: $primary-color;
+      padding: 0 0 0 5px;
+    }
+
+    .floatNumber {
+      text-align: left;
+      font: normal normal 200 26px/37px $primary-font;
+      letter-spacing: 0px;
+      color: $secondary-color;
+      align-self: flex-end;
+    }
+
+    .tag {
+      text-align: left;
+      font: normal normal normal 13px/16px $primary-font;
+      letter-spacing: 0px;
+      color: $primary-color;
+      position: absolute;
+      bottom: 10px;
+      right: 78px;
+    }
+  }
+
+  .pricingFeatures {
+    padding: 0;
+    padding-top: 20px;
+    padding-bottom: 44px;
+    margin-bottom: 0px;
+    list-style: none;
+
+    li {
+      font: normal normal normal 16px/28px $primary-font;
+      letter-spacing: 0.32px;
+      color: #37474f;
+      margin: 0 0 15px;
+      svg{
+        color: $primary-color;
+        font-size: 25px;
+        font-weight: 600;
+        margin: 0 10px 0 0;
+      }
+    }
+  }
+
+  .priceBtn {
+    color: #fff !important;
+    position: relative;
+    font-weight: 600;
+    transition: 0.45s;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid transparent;
+    z-index: 1111 !important;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      left: -35%;
+      top: 0;
+      transform: skew(50deg);
+      transition-duration: 0.6s;
+      transform-origin: top left;
+      width: 0;
+      background: $white;
+      z-index: 0;
+    }
+
+    &:hover {
+      color: $secondary-color !important;
+      border-color: $secondary-color;
+
+      &::after {
+        height: 100%;
+        width: 135%;
+        z-index: -1;
+      }
+    }
+  }
+}
+@media(max-width: 1199px){
+    .boxWrapper{
+        width: 100%;
+        margin: 0 auto 20px;
+        padding: 20px;
+    }
+}
+@media(max-width: 575px){
+    .boxWrapper{
+        width: 100%;
+        margin: 0 auto 20px;
+        padding: 20px;
+    }
+}

@@ -1,0 +1,62 @@
+@import "../../styles/theme/variables";
+
+.footer {
+  padding: 30px 0;
+
+  p {
+    font-size: 14px;
+    text-align: center;
+    color: #000;
+    letter-spacing: 0.4px;
+    line-height: 34px;
+
+    a {
+      color: #000;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    li {
+      a {
+        color: $secondary-color;
+        transition: 0.45s;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+
+  .social-links {
+    justify-content: space-evenly;
+  }
+}
+
+@media (max-width: 991px) {
+  .footer-links {
+    li {
+      a {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .footer {
+    text-align: center;
+
+    .footer-links {
+      padding: 10px 0;
+    }
+  }
+}
