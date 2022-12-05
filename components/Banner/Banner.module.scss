@@ -149,6 +149,11 @@
 
 @media (max-width: 575px){
   .main-banner {
+    a{
+      display: block;
+      width: 100%;
+    }
+    
     .banner-content {
       h1{
         font-size: 25px;

@@ -298,9 +298,6 @@
     height: auto;
     .trusted-partners {
       padding: 25px 0;
-      img {
-        width: 80px !important;
-      }
     }
     .trusted-bottom {
       padding: 30px 0;
@@ -360,6 +357,8 @@
   }
 }
 @media (max-width: 575px) {
+
+
   .home-banner {
     height: 100vh;
     background-position: unset;
@@ -370,6 +369,10 @@
     min-height: auto;
     height: auto;
     padding: 30px 0;
+    a{
+      display: block;
+      width: 100%;
+    }
     .trusted-content {
       p {
         font-size: 16px;
@@ -383,13 +386,9 @@
       }
     }
     .trusted-partners {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      align-items: center;
-      place-items: center;
-      gap: 10px 0;
+      flex-wrap: wrap;
       img {
-        width: 80px !important;
+        margin: 10px 20px;
       }
     }
     .trusted-bottom {

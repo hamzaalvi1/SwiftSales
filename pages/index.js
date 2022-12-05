@@ -18,7 +18,7 @@ export default function Home() {
     <main>
       <Head>
         <title>
-        SwiftSales: Free Best Live Chat App | Software for Customer Support
+          SwiftSales: Free Best Live Chat App | Software for Customer Support
         </title>
         {/* Open Graph Tags */}
         <meta property="og:title" content="SwiftSales" />

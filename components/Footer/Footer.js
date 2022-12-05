@@ -1,8 +1,11 @@
-import styles from "./Footer.module.scss"
-import { Container, Row, Col } from "react-bootstrap"
+
 import Image from "next/image"
 import Link from "next/link"
-import { FaLinkedinIn, FaInstagram } from "react-icons/fa"
+import { Container, Row, Col } from "react-bootstrap"
+import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
+
+import styles from "./Footer.module.scss"
+
 function Footer() {
   return (
     <footer className={styles["footer"]}>
